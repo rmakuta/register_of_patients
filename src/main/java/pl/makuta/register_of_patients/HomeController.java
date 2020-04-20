@@ -16,14 +16,14 @@ public class HomeController {
     }
 
     //logi
-    @GetMapping("/")
-    @ResponseBody
-    public String home(){
-        log.info("Info mesage");
-        log.warning("war");
-//        log.error("error message");
-        return "home";
-    }
+//    @GetMapping("/")
+//    @ResponseBody
+//    public String home(){
+//        log.info("Info mesage");
+//        log.warning("war");
+////        log.error("error message");
+//        return "home";
+//    }
 
     @GetMapping("/about")
     @ResponseBody

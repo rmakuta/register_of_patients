@@ -22,8 +22,6 @@ public class UserController {
         return "user_all";
     }
 
-// dodawanie
-
     @GetMapping("/user/add")
     public String addUser(Model model) {
         model.addAttribute("user", new User());
@@ -36,16 +34,11 @@ public class UserController {
         return "redirect:all";
     }
 
-// usuwanie
-
     @RequestMapping("/user/delete/{id}")
     public String deleteUser(@PathVariable Long id){
         userService.delete(userService.findById(id));
         return "redirect:/home/user/all";
     }
-
-
-// edycja
 
     @GetMapping("/user/edit/{id}")
     public String editUser(@PathVariable Long id, Model model){

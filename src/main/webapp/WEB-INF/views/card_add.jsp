@@ -85,15 +85,15 @@
 <%--                            </tr>--%>
                             <tr>
                                 <th>Data ostatniego badania</th>
-                                <td><form:input path="lastDate"/></td>
+                                <td><form:input path="lastDate" /></td>
                             </tr>
                             <tr>
                                 <th>Uprawnienia</th>
-                                <td><form:select path="qualification" items="${qualifications}" itemValue="id" itemLabel="name"/></td>
+                                <td><form:radiobuttons path="qualification" items="${qualifications}" itemValue="id" itemLabel="name"/></td>
                             </tr>
                             <tr>
                                 <th>Badania</th>
-                                <td><form:select path="testitngList" items="${testings}" itemValue="id" itemLabel="name" multiple="true"/></td>
+                                <td><form:checkboxes path="testitngList" items="${testings}" itemValue="id" itemLabel="name" multiple="true"/></td>
                             </tr>
                             <tr>
                                 <th>Treść orzeczenia</th>

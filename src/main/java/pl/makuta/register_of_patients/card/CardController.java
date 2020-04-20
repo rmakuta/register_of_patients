@@ -36,8 +36,6 @@ public class CardController {
         return "card_all";
     }
 
-    // dodawanie
-
     @GetMapping("/home/card/add")
     public String addCard(Model model) {
         model.addAttribute("card", new Card());
@@ -55,15 +53,11 @@ public class CardController {
         return "redirect:/home";
     }
 
-    // usuwanie
-
     @RequestMapping("/home/card/delete/{id}")
     public String deleteCard(@PathVariable Long id){
         cardService.delete(cardService.findById(id));
         return "redirect:/home";
     }
-
-    // edycja
 
     @GetMapping("/home/card/edit/{id}")
     public String editCard(@PathVariable Long id, Model model){

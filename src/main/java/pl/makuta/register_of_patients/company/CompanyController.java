@@ -22,8 +22,6 @@ public class CompanyController {
         return "company_all";
     }
 
-// dodawanie
-
     @GetMapping("/company/add")
     public String addCompany(Model model) {
         model.addAttribute("company", new Company());
@@ -36,17 +34,12 @@ public class CompanyController {
         return "redirect:all";
     }
 
-// usuwanie
-
     @RequestMapping("/company/delete/{id}")
     public String deleteCompany(@PathVariable Long id){
         System.out.println("plum");
         companyService.delete(companyService.findById(id));
         return "redirect:/home/company/all";
     }
-
-
-// edycja
 
     @GetMapping("/company/edit/{id}")
     public String editCompany(@PathVariable Long id, Model model){

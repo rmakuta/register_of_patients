@@ -22,8 +22,6 @@ public class TestingController {
         return "testing_all";
     }
 
-    // dodawanie
-
     @GetMapping("/testing/add")
     public String addTesting(Model model) {
         model.addAttribute("testing", new Testing());
@@ -36,15 +34,11 @@ public class TestingController {
         return "redirect:all";
     }
 
-    // usuwanie
-
     @RequestMapping("/testing/delete/{id}")
     public String deleteTesting(@PathVariable Long id){
         testingService.delete(testingService.findById(id));
         return "redirect:/home/testing/all";
     }
-
-    // edycja
 
     @GetMapping("/testing/edit/{id}")
     public String editTesting(@PathVariable Long id, Model model){

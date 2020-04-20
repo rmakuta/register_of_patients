@@ -21,8 +21,6 @@ public class QualificationController {
         return "qualification_all";
     }
 
-    // dodawanie
-
     @GetMapping("/qualification/add")
     public String addQualification(Model model) {
         model.addAttribute("qualification", new Qualification());
@@ -35,15 +33,11 @@ public class QualificationController {
         return "redirect:all";
     }
 
-    // usuwanie
-
     @RequestMapping("/qualification/delete/{id}")
     public String deleteQualification(@PathVariable Long id){
         qualificationService.delete(qualificationService.findById(id));
         return "redirect:/home/qualification/all";
     }
-
-    // edycja
 
     @GetMapping("/qualification/edit/{id}")
     public String editQualification(@PathVariable Long id, Model model){
